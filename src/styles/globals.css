@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bordered-bottom {
+    position: relative;
+    /* Define a posição como relativa */
+    z-index: 1;
+    /* Define a ordem de sobreposição */
+    border-bottom: 2px solid transparent;
+    /* Começa com uma borda transparente */
+    transition: border-color 0.3s;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.bordered-bottom:hover {
+    border-bottom: 2.5px solid #e11137;
+
+}
+
+.box-shadow-custom {
+    box-shadow:  0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);
+}
