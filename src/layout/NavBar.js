@@ -88,7 +88,7 @@ export const NavBar = () => {
     const [isDropDownVisible, setIsDropDownVisible] = useState(false);
     return (
         <nav className="bg-white h-20 box-shadow-custom flex items-center">
-            <div className="flex flex-wrap items-center justify-between w-11/12 h-full px-10 divide-x-0 divide-zinc-700">
+            <div className="flex flex-wrap items-center justify-between w-11/12 h-full z-50 px-10 divide-x-0 divide-zinc-700">
                 <a href="#" class="flex items-center ">
                     <div className="h-7">
                         {logo}

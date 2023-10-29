@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-color: rgb(236, 237, 242);
+}
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -20,11 +23,27 @@
     transition: all 0.1s;
 }
 
+.bordered-bottom-colored {
+    position: relative;
+    /* Define a posição como relativa */
+    z-index: 1;
+    /* Define a ordem de sobreposição */
+    border-bottom: 2px solid transparent;
+    /* Começa com uma borda transparente */
+    transition: all 1.5s ease-in-out;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.bordered-bottom-colored:focus {
+    border-bottom: 2px solid #e11137;
+}
+
 .bordered-bottom:hover {
     border-bottom: 2.5px solid #e11137;
 
 }
 
 .box-shadow-custom {
-    box-shadow:  0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
 }
