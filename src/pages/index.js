@@ -4,6 +4,7 @@ import { NavBar } from '@/layout/NavBar'
 import 'tailwindcss/tailwind.css';
 import { Carousel } from '@/components/Carousel/Carousel';
 import { Header } from '@/layout/Header';
+import { Body } from '@/layout/Body';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,13 +14,14 @@ export default function Home() {
     <main
       className="flex flex-col align-middle"
     >
-    
-        <NavBar />
-        <Header />
-        <div>
 
-        </div>
-     
+      <NavBar />
+      <Header />
+      <Body />
+      <div>
+
+      </div>
+
     </main>
   )
 }

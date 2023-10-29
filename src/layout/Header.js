@@ -5,7 +5,7 @@ export const Header = () => {
     return (
         <>
             <Carousel />
-            <div className="h-40 d-flex items-center align-middle mx-auto justify-center w-full" style={{ zIndex: 40, maxWidth: "1008px", minWidth: "1008px" }}>
+            <div className="h-40 d-flex items-center align-middle mx-auto justify-center w-full mb-3" style={{ zIndex: 40, maxWidth: "1008px", minWidth: "1008px" }}>
 
                 <div className="flex flex-col h-25 bg-white border rounded-xl shadow-md p-6">
                     <div className="flex gap-6 mb-3">

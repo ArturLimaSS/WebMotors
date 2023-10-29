@@ -21,13 +21,13 @@ export const Carousel = () => {
     };
 
     return (
-        <div id="default-carousel" className="relative w-full z-0" data-carousel="slide" style={{zIndex: 0,marginBottom: "-80px"}}>
-            <div className="relative h-56 overflow-hidden md:h-96">
+        <div id="default-carousel" className="relative w-full z-0" data-carousel="slide" style={{ zIndex: 0, marginBottom: "-40px" }}>
+            <div className="relative overflow-hidden" style={{height: "17vw"}}>
                 {images.map((src, index) => (
                     <div
                         key={index}
                         className={`${ index === currentSlide ? 'translate-x-0' : 'translate-x-full'
-                            } transition-transform duration-1000 ease-in-out absolute w-full h-full`}
+                            } transition-transform duration-1000 ease-in-out fixed w-full`}
                         data-carousel-item
                     >
                         <img src={src} width="100%" layout="fill" objectFit="cover" alt={`Carousel Image ${ index + 1 }`} />
