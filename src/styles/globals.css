@@ -2,6 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@splidejs/react-splide/css';
+
+// or other themes
+@splidejs/react-splide/css/skyblue';
+@splidejs/react-splide/css/sea-green';
+
+// or only core styles
+@splidejs/react-splide/css/core';
+
 
 body {
     background-color: rgb(236, 237, 242);

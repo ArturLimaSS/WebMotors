@@ -21,16 +21,16 @@ export const Carousel = () => {
     };
 
     return (
-        <div id="default-carousel" className="relative w-full z-0" data-carousel="slide" style={{ zIndex: 0, marginBottom: "-40px" }}>
-            <div className="relative overflow-hidden" style={{height: "17vw"}}>
+        <div id="default-carousel" className="relative w-full -z-1" data-carousel="slide" style={{ zIndex: 0, marginBottom: "-40px" }}>
+            <div className="relative -z-1 overflow-hidden" style={{height: "17vw"}}>
                 {images.map((src, index) => (
                     <div
                         key={index}
                         className={`${ index === currentSlide ? 'translate-x-0' : 'translate-x-full'
-                            } transition-transform duration-1000 ease-in-out fixed w-full`}
+                            } transition-transform z-0 duration-1000 ease-in-out absolute w-full`}
                         data-carousel-item
                     >
-                        <img src={src} width="100%" layout="fill" objectFit="cover" alt={`Carousel Image ${ index + 1 }`} />
+                        <img src={src} width="100%" style={{zIndex: 0}} layout="fill" objectFit="cover" alt={`Carousel Image ${ index + 1 }`} />
                     </div>
                 ))}
             </div>
