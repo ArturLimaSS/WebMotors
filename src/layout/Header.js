@@ -28,7 +28,7 @@ export const Header = () => {
                                 placeholder="Digite a marca ou modelo do carro"></input>
                         </div>
                         <button className="bg-red-500 font-semibold w-72 rounded-lg p-3 text-white">
-                            VER OFERTAS (25789)
+                            VER OFERTAS (25.789)
                         </button>
                     </div>
                 </div>

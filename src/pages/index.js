@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main
-      className="flex flex-col align-middle"
+      className="flex flex-col align-middle bg-zinc-100"
     >
 
       <NavBar />

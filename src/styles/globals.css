@@ -13,7 +13,7 @@
 
 
 body {
-    background-color: rgb(236, 237, 242);
+    background-color: rgb(236, 237, 242) !important;
 }
 
 * {
