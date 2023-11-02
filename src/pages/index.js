@@ -5,6 +5,7 @@ import 'tailwindcss/tailwind.css';
 import { Carousel } from '@/components/Carousel/Carousel';
 import { Header } from '@/layout/Header';
 import { Body } from '@/layout/Body';
+import { Footer } from '@/layout/Footer';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,6 +19,7 @@ export default function Home() {
       <NavBar />
       <Header />
       <Body />
+      <Footer />
       <div>
 
       </div>

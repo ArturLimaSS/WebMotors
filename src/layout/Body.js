@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import { Categories } from "@/items/Categories";
 import Link from "next/link";
 import { Cars } from "@/items/Cars";
+import Image from "next/image";
 
 const data = [
     { title: "", image: "/assets/logos/hyundai.webp", link: "/hyundai" },
@@ -71,7 +72,7 @@ export const Body = () => {
                 </Swiper>
             </div>
 
-            <div className="w-full mt-6">
+            <div className="w-full mt-6 mb-20">
                 <div className="title w-full my-3 font-semibold" id="title">
                     <h1>Carros mais buscados</h1>
 
@@ -92,16 +93,26 @@ export const Body = () => {
                     {Cars.map((item, index) => (
                         <SwiperSlide key={index} style={{ width: "191px", height: "250px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                             <div className="w-full h-full rounded-lg bg-white m-auto flex">
-                                <Link href="ofertas" className="flex items-start justify-center text-zinc-700 font-normal rounded-lg  h-82 w-52 border-spacing-0"
+                                <Link href="ofertas" className="flex items-start flex-col justify-center text-zinc-700 font-normal rounded-lg  h-82 w-52 border-spacing-0"
                                     style={
                                         {
-                                            backgroundImage: `url(${ item.image })`,
-                                            backgroundPosition: "bottom",
-                                            backgroundRepeat: "no-repeat",
-                                            fontSize: "22px"
+                                            // backgroundImage: `url(${ item.image })`,
+                                            // backgroundPosition: "bottom",
+                                            // backgroundRepeat: "no-repeat",
+                                            // fontSize: "22px"
                                         }}>
-                                    <div className="w-full h-full flex items-start pt-4 pl-6 font-semibold text-2xl">
-                                        {item.title}
+                                    <div className="w-full h-full flex flex-col justify-start text-start items-start pt-4 pl-6">
+                                        <span className="flex justify-start text-start items-start text-lg font-semibold -mb-2">
+                                            {item.title.split(" ")[0]}
+                                        </span>
+                                        <span className="flex justify-start text-start items-start text-webmotors-red font-bold">
+                                            {item.title.split(" ")[1]}
+                                        </span>
+
+                                    </div>
+                                    <div className="h-full flex items-start justify-start align-top">
+                                        <Image className="mb-10" width={"500"} height={"500"} src={item.image} />
+
                                     </div>
                                 </Link>
                             </div>
@@ -110,8 +121,6 @@ export const Body = () => {
                     ))}
                 </Swiper>
             </div>
-
-            
         </div>
     )
 }
