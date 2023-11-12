@@ -9,6 +9,9 @@ const endpoint = axios.create({
 const api = {
     options: () => {
         return endpoint.get('/options')
+    },
+    ofertas: () => {
+        return endpoint.get('/ofertas')
     }
 }
 

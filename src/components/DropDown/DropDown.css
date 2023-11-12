@@ -5,8 +5,8 @@
 .menu-item:hover .dropdown-container {
     opacity: 1;
     pointer-events: auto;
-    max-width: 100% !important;
-    min-width: 220px !important;
+    min-width: 230px !important;
+    max-height: 1000%;
     
 }
 
@@ -16,18 +16,19 @@
 
 .dropdown-container {
     opacity: 0;
-    max-width: 100% !important;
+    min-width: 240%;
+    max-height: 100%;
     pointer-events: none;
     position: absolute;
     top: 100%;
     left: 0;
     background: white;
-    transition: all 0.2s;
+    transition: all 0.25s;
 }
 
 .dropdown-item {
     margin-left: 25px;
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 
 .icon-option {

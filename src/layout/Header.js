@@ -1,7 +1,30 @@
+import { useOfertas } from "@/Context/OfertasContext";
+import { useState } from "react"
 import { Carousel } from "@/components/Carousel/Carousel"
 import { RiSearch2Line } from "react-icons/ri"
 
 export const Header = () => {
+
+    const { ofertas } = useOfertas();
+    const [quantidade, setQuantidade] = useState(ofertas[0].quantidade)
+    const [searchType, setSearchType] = useState('carro')
+    const switchData = async (e) => {
+        if (!Array.isArray(ofertas)) {
+            console.error('ofertas não é um array:', ofertas);
+            return;
+        }
+
+        const oferta = ofertas.find((item) => item.title === `${e}`);
+
+        if (oferta) {
+            setQuantidade(oferta.quantidade)
+            setSearchType(oferta.title)
+        } else {
+            console.log(`Nenhuma oferta encontrada para o título: '${e}' Array: ${typeof (ofertas)}`);
+        }
+    }
+
+
     return (
         <div className="mt-10">
             <Carousel />
@@ -9,8 +32,10 @@ export const Header = () => {
 
                 <div className="flex flex-col h-25 bg-white border rounded-xl shadow-md p-6">
                     <div className="flex gap-6 mb-3">
-                        <button className="p-2 bordered-bottom-colored font-bold" autoFocus>Comprar Carros</button>
-                        <button className="p-2 bordered-bottom-colored font-bold">Comprar Motos</button>
+                        <button className="p-2 bordered-bottom-colored font-bold" value="carro" onClick={(e) => switchData(e.target.value)}>Comprar Carros</button>
+                        <button className="p-2 bordered-bottom-colored font-bold" value="moto" onClick={(e) => switchData(e.target.value)}>Comprar Motos</button>
+
+
                         <button className="p-2 bordered-bottom-colored font-bold">Quero vender</button>
                         <button className="p-2 bordered-bottom-colored font-bold">Quero financiar</button>
 
@@ -25,10 +50,10 @@ export const Header = () => {
                             <input
                                 type="text"
                                 className="bg-transparent border-none w-full p-3 font-semibold"
-                                placeholder="Digite a marca ou modelo do carro"></input>
+                                placeholder={"Digite a marca ou modelo " + (searchType === "carro" ? "do " : "da ") + searchType} ></input>
                         </div>
                         <button className="bg-red-500 font-semibold w-72 rounded-lg p-3 text-white">
-                            VER OFERTAS (25.789)
+                            VER OFERTAS ({quantidade})
                         </button>
                     </div>
                 </div>
